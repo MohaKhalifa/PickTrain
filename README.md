@@ -1,3 +1,4 @@
 # Mohamed Khalifa's Graduation Project for BSIT. 
 ## Train Ticket Booking Management System for Sudan Railways
+- The train ticket booking process at Sudan Railways is done manually at stations. This traditional method causes long queues, delays, and mistakes in passenger records. To solve these problems, this project creates the Train Ticket Booking Management System for Sudan Railways. The system has a website for passengers to check train schedules and request tickets easily from browsers. It also includes a web portal for railway employees to manage train information and approve or reject ticket bookings, and a web portal for administrators to manage passenger and employee accounts. A central database connects them to keep data updated in real time. In conclusion, the system successfully eliminates the need to stand in lines at stations, saves time, and improves operational efficiency for Sudan Railways.
 HTML, CSS, JS, PHP, MYSQL, JSON, XAMPP.
