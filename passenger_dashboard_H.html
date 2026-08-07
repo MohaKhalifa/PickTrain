@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Passenger Dashboard</title>
+    <link rel="stylesheet" href="styles/dash_styles.css" />
+  </head>
+  <body>
+    <div class="nav">
+      <span>
+        <h2 style="margin-left: 10px">
+          <i style="font-size: larger; padding-right: 10px">Ticket History</i
+          ><b
+            style="
+              border: solid 0.5px lightblue;
+              border-radius: 8px;
+              padding: 7px;
+              font-size: medium;
+            "
+            >User: <b id="passUser"></b
+          ></b>
+        </h2>
+      </span>
+      <span>
+        <a href="passenger_dashboard_H.html">History</a>
+        <a href="passenger_dashboard_B.html">Booking</a>
+        <button onclick="logout()" class="btn-red">Log Out</button>
+      </span>
+    </div>
+    <div class="box">
+      <h3>Your Ticket History <button onclick="loadh()" class="btn-green">Refresh</button></h3>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Ticket ID</th>
+            <th>Train Name</th>
+            <th>Booking Date</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Departure</th>
+            <th>Tickets</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="historyTbody"></tbody>
+      </table>
+    </div>
+    <script src="javascript/passenger_dashboard_H.js"></script>
+  </body>
+</html>

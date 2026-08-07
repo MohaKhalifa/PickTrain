@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Staff Login</title>
+    <link rel="stylesheet" href="styles/login_styles.css" />
+  </head>
+  <body>
+    <div class="pageWrapper">
+      <h3>Passenger? <a href="passenger_login.html">Passenger Login</a></h3>
+      <div class="loginBox">
+        <h2><b>Sudan Railways Staff Login</b></h2>
+        <p id="error" class="error-msg"></p>
+        <form id="loginForm">
+          <input type="text" name="userName" required placeholder="User Name" />
+          <input
+            type="password"
+            name="password"
+            required
+            placeholder="Password"
+          />
+          <button type="submit">Log In</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          //clears prev errormsgs
+          document.getElementById("error").textContent = "";
+
+          fetch("php/staff_login.php", {
+            method: "POST",
+            body: new FormData(this),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.success) {
+                localStorage.setItem("staffRole", data.role);
+                localStorage.setItem("staffName", data.username);
+                if (data.role === "admin") {
+                  window.location.href = "admin_dashboard_MGE.html";
+                } else if (data.role === "employee") {
+                  window.location.href = "employee_dashboard_MGT.html";
+                }
+              } else {
+                document.getElementById("error").textContent = data.message;
+              }
+            });
+        });
+    </script>
+  </body>
+</html>

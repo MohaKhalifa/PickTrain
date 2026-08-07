@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles/dash_styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  </head>
+  <body>
+    <div class="nav">
+      <span>
+        <h2 style="margin-left: 10px">
+          <i style="font-size: larger; padding-right: 10px">Manage Employees </i
+          ><b
+            style="
+              border: solid 0.5px lightblue;
+              border-radius: 8px;
+              padding: 7px;
+              font-size: medium;
+            "
+            >User: <b id="adminUser"></b
+          ></b>
+        </h2>
+      </span>
+      <span>
+        <a href="admin_dashboard_MGE.html">Employees</a>
+        <a href="admin_dashboard_MGP.html">Passengers</a>
+        <button onclick="logout()" class="btn-red">Log Out</button>
+      </span>
+    </div>
+
+    <div style="display: flex; gap: 20px; flex-wrap: wrap">
+      <div class="box" style="flex: 1; min-width: 300px; text-align: center">
+        <h3 style="margin-top: 0; margin-bottom: 15px">
+          Create Employee Account
+        </h3>
+        <form id="addEmpForm" class="form">
+          <input type="hidden" name="action" value="add_emp" />
+          <input type="text" name="un" required placeholder="Username" />
+          <input type="password" name="pw" required placeholder="Password" />
+          <button type="submit" class="btn-green">Save Employee</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="box">
+      <h3>Manage Employees</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Change Password</th>
+            <th>Remove Account</th>
+          </tr>
+        </thead>
+        <tbody id="staffTableBody"></tbody>
+      </table>
+    </div>
+    <script src="javascript/admin_dashboard_MGE.js"></script>
+    <script src="javascript/admin_dashboard_shared.js"></script>
+  </body>
+</html>

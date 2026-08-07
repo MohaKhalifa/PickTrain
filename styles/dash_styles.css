@@ -1,0 +1,151 @@
+* {
+  transition: all 0.2s ease-in-out;
+}
+tr:hover,
+td:hover,
+.form input:hover,
+.form select:hover {
+  box-shadow: 0 0 1px 0.5px rgb(15, 183, 239);
+}
+body {
+  background: rgb(17, 24, 39);
+  color: rgb(255, 255, 255);
+  font-family: "Times New Roman", serif;
+  padding: 25px;
+  margin: 0;
+}
+.box h3 {
+  margin-top: 12px;
+  margin-bottom: 25px;
+}
+.nav,
+.box {
+  background: rgb(31, 41, 55);
+  border: 1px solid rgb(55, 65, 81);
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  text-align: center;
+}
+.nav {
+  position: sticky;
+  top: 0px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav a,
+.nav h2 {
+  margin-right: 30px;
+}
+.nav a {
+  color: white;
+  border: solid 1px white;
+  border-radius: 9px;
+  padding: 12px;
+}
+.nav a:hover {
+  opacity: 0.8;
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.form input,
+.form select {
+  padding: 8px;
+  background: rgb(17, 24, 39);
+  color: rgba(255, 255, 255);
+  border: 1px solid rgb(75, 85, 99);
+  height: 20px;
+  width: 160px;
+  border-radius: 6px;
+}
+.form select {
+  height: 36px !important;
+}
+.dropMenu
+{
+  height:28px; margin-top: 4px; border-radius: 5px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+td {
+  border: 1px solid rgb(55, 65, 81);
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: rgb(55, 65, 81);
+  padding: 10px;
+  text-align: center;
+}
+
+td input {
+  border-radius: 4px;
+}
+
+.btn-blue {
+  background: rgb(37, 99, 235);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 0 15px;
+  height: 36px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-blue:hover,
+.btn-green:hover,
+.btn-red:hover {
+  transform: translateY(-7%);
+}
+/* Old Hover:
+box-shadow: 0 0 2px 2px aqua;
+box-shadow: 0 0 2px 2px rgb(79, 131, 90);
+box-shadow: 0 0 2px 2px rgb(233, 116, 116);
+*/
+.btn-green {
+  background: rgb(16, 185, 129);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 0 15px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.btn-red {
+  background: rgb(239, 68, 68);
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.Pending {
+  color: rgb(245, 158, 11);
+  font-weight: bold;
+}
+.Approved {
+  color: rgb(16, 185, 129);
+  font-weight: bold;
+}
+.Rejected {
+  color: rgb(239, 68, 68);
+  font-weight: bold;
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Passenger Login</title>
+    <link rel="stylesheet" href="styles/login_styles.css" />
+  </head>
+  <body>
+    <div class="pageWrapper">
+      <h3>Staff Member? <a href="staff_login.html">Staff Login</a></h3>
+      <h3>Don't Have an account? <a href="passenger_register.html">Resgister</a></h3>
+      <div class="loginBox">
+        <h2><b>Sudan Railways Passenger Login</b></h2>
+        <p id="error" class="error-msg"></p>
+        <form id="loginForm">
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Email Address"
+          />
+          <input
+            type="password"
+            name="password"
+            required
+            placeholder="Password"
+          />
+          <button type="submit">Log In</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          document.getElementById("error").textContent = "";
+
+          fetch("php/user_login.php", {
+            method: "POST",
+            body: new FormData(this),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.success) {
+                localStorage.setItem("passengerId", data.id);
+                localStorage.setItem("passengerName", data.name);
+                window.location.href = "passenger_dashboard_H.html";
+              } else {
+                document.getElementById("error").textContent = data.message;
+              }
+            });
+        });
+    </script>
+  </body>
+</html>

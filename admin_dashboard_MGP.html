@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles/dash_styles.css" />
+  </head>
+  <body>
+    <div class="nav">
+      <span>
+        <h2 style="margin-left: 10px">
+          <i style="font-size: larger; padding-right: 10px"
+            >Manage Passengers </i
+          ><b
+            style="
+              border: solid 0.5px lightblue;
+              border-radius: 8px;
+              padding: 7px;
+              font-size: medium;
+            "
+            >User: <b id="adminUser"></b
+          ></b>
+        </h2>
+      </span>
+      <span>
+        <a href="admin_dashboard_MGE.html">Employees</a>
+        <a href="admin_dashboard_MGP.html">Passengers</a>
+        <button onclick="logout()" class="btn-red">Log Out</button>
+      </span>
+    </div>
+
+    <div style="display: flex; gap: 20px; flex-wrap: wrap">
+      <div class="box" style="flex: 1; min-width: 300px; text-align: center">
+        <h3 style="margin-top: 0; margin-bottom: 15px">
+          Create Passenger Account
+        </h3>
+        <form id="addPassengerForm" class="form">
+          <input type="hidden" name="action" value="add_passenger" />
+          <input type="text" name="name" required placeholder="Name" />
+          <input type="email" name="email" required placeholder="Email" />
+          <input
+            type="password"
+            name="password"
+            required
+            placeholder="Password"
+          />
+          <button type="submit" class="btn-green">Register Passenger</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="box">
+      <h3>Manage Registered Passengers</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email Address</th>
+            <th>Change Password</th>
+            <th>Remove Account</th>
+          </tr>
+        </thead>
+        <tbody id="passengerTableBody"></tbody>
+      </table>
+    </div>
+    <script src="javascript/admin_dashboard_MGP.js"></script>
+    <script src="javascript/admin_dashboard_shared.js"></script>
+  </body>
+</html>

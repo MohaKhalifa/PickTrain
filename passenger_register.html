@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles/login_styles.css" />
+    <title>Passenger register</title>
+  </head>
+
+  <body>
+    <div class="pageWrapper">
+      <h3>Alreay Have An account?<a href="passenger_login.html">login</a></h3>
+      <div class="loginBox">
+        <h2><b>Sudan Railways Passenger Registration</b></h2>
+        <p id="theError" class="error-msg"></p>
+        <form id="registerForm">
+          <input type="text" name="username" required placeholder="User Name" />
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Email Address"
+          />
+          <input
+            type="password"
+            name="password"
+            required
+            placeholder="Password"
+          />
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          document.getElementById("theError").innerHTML = "";
+          fetch("php/passenger_register.php", {
+            method: "POST",
+            body: new FormData(this),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.success) {
+                alert(data.message);
+                localStorage.clear();
+                window.location.href = "passenger_login.html";
+              } else {
+                document.getElementById("theError").innerHTML = data.error;
+              }
+            });
+        });
+    </script>
+  </body>
+</html>
